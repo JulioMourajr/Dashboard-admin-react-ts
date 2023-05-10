@@ -1,0 +1,58 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "teste@gmail.com",
+      "password": "teste@123"
+    }
+  ],
+  "informacoes": [
+    {
+      "id": 1,
+      "foto": "https://github.com/JulioMourajr.png",
+      "nome": "Julio Moura",
+      "cargo": "Dev Front end",
+      "resumo": "Um nutricionista em transição de carreira, possui conhecimentos em HTML, CSS, JS, React, Node,SQL , Java e Spring."
+    }
+  ],
+  "experiencias": [
+    {
+      "id": 2,
+      "titulo": "Sistemas de Informação",
+      "descricao": "",
+      "tipo": "academico",
+      "anoInicio": "2023",
+      "anoFim": "2023"
+    },
+    {
+      "id": 3,
+      "titulo": "Tecnico de sistemas Audiovisuais - TV GAZETA",
+      "descricao": "",
+      "tipo": "profissional",
+      "anoInicio": "2012",
+      "anoFim": "2037"
+    },
+    {
+      "id": 7,
+      "titulo": "Dev comeia Labs Front end",
+      "descricao": "",
+      "tipo": "profissional",
+      "anoInicio": "2023",
+      "anoFim": "2027"
+    }
+  ],
+  "portifolio": [
+    {
+      "id": 1,
+      "link": "https://github.com/JulioMourajr/Casimiroflix",
+      "imagem": "https://picsum.photos/200/300?random=1",
+      "titulo": "Casimiroflix"
+    },
+    {
+      "id": 2,
+      "link": "https://github.com/JulioMourajr/cracha-nlw",
+      "imagem": "https://picsum.photos/200/300?random=2",
+      "titulo": "Crachá Digital"
+    }
+  ]
+}

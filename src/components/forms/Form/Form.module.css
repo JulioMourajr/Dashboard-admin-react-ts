@@ -1,0 +1,15 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  background-color: #f2f2f2; border-radius: 10px; padding: 20px;
+  margin: 50px; 
+}
+
+.formWrapper{
+  display: flex;
+  justify-content: center;
+  border: none;
+  width: 100%;
+}

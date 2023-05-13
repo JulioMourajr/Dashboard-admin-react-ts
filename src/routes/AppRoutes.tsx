@@ -7,7 +7,7 @@ import Home from '../pages/home'
 import CadastrarPortifolio from '../pages/portifolio/CadastrarPortifolio'
 import ListagemPortifolios from '../pages/portifolio/ListagemPortifolio'
 import CadastrarInformacoes from '../pages/curriculo/CadastrarInformacoes'
-import CadastrarExperiencia from '../pages/curriculo/CadastrarExperiencia'
+import CadastrarExperiencia from '../pages/curriculo/ManipularExperiencia'
 import ListagemExperiencia from '../pages/curriculo/ListagemExperiencia'
 import { useAuth } from '../contexts/AuthContexts'
 

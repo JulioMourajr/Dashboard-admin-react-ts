@@ -9,9 +9,11 @@ interface ButtonProps {
     children: React.ReactNode;
 }
 
-const Button:React.FC <ButtonProps> = ({ type="button",onClick, red = false, children}) => {
+const Button:React.FC <ButtonProps> = 
+({ type="button",onClick, red, children}) => {
   return (
-    <button type={type} 
+    <button 
+    type={type} 
     className={`${styles.button} ${red && styles.redButton}`}
     onClick={onClick}   
     >

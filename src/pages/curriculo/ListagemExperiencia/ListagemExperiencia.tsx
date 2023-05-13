@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
 
-import styles from './ListagemExperiencias.module.css'
-import {getExperiencias, Experiencia, deleteExperiencia} from '../../../services/experienciaService'
 import { useNavigate } from "react-router-dom";
+
+import {Table, Column} from "../../../components/common/Table"
+
+import {
+  getExperiencias, 
+  Experiencia,
+  deleteExperiencia
+} from '../../../services/experienciaService';
+
 
 const ListagemExperiencias: React.FC = () => {
 
@@ -26,12 +33,12 @@ const ListagemExperiencias: React.FC = () => {
   }, [])
     
   const handleEdit = (experiencia: Experiencia) => {
-    navigate('/curriculo/experiencia/cadastro', {state:experiencia})
+    navigate('/curriculo/experiencia/atualizar', {state:experiencia})
   }
 
-  const handleDelete = async (index: number) => {
+  const handleDelete = async (experiencia: Experiencia) => {
     try {
-      await deleteExperiencia(index);
+      await deleteExperiencia(experiencia.id);
       fetchExperiencias();
      alert('Experiencia deletada com sucesso!');
     } catch (error) {
@@ -40,34 +47,21 @@ const ListagemExperiencias: React.FC = () => {
     } 
   }
 
+  const columns:Column<Experiencia>[] = [
+    {header:"Titulo", acessor:"titulo"},
+    {header:"Descrição", acessor:"descricao"},
+    {header:"Tipo", acessor:"tipo"},
+    {header:"Ano Início", acessor:"anoInicio"},
+    {header:"Ano Fim", acessor:"anoFim"},
+  ];
+
   return (
-    <table className={styles.table}>
-      <thead>
-        <tr>
-          <th>Titulo</th>
-          <th>Descrição</th>
-          <th>Tipo</th>
-          <th>Ano de Inicio</th>
-          <th>Ano de Fim</th>
-          {<th>Ações</th>}
-        </tr>
-      </thead>
-      <tbody>
-        {experiencias.map((experiencia, index) => (
-          <tr key={index}>
-            <td>{experiencia.titulo}</td>
-            <td>{experiencia.descricao}</td>
-            <td>{experiencia.tipo}</td>
-            <td>{experiencia.anoInicio}</td>
-            <td>{experiencia.anoFim}</td>
-            <td>
-              <button onClick={()=>handleEdit(experiencia)}>Editar</button>
-              <button onClick={()=>handleDelete(experiencia.id)}>Excluir</button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+   <Table
+      columns={columns}
+      data={experiencias}
+      handleEdit={handleEdit}
+      handleDelete={handleDelete}   
+   />
   );
 }
 

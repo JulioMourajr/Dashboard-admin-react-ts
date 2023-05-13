@@ -1,19 +1,24 @@
 import React, {useEffect, useState}from "react";
+
 import * as Yup from 'yup';
-import styles from "./CadastrarInformacoes.module.css";
-import { Formik, Form } from "formik";
+import { AxiosError } from "axios";
+
+import Form from "../../../components/forms/Form";
 import Input from "../../../components/forms/Input";
+import Title from "../../../components/common/Title";
 import Textarea from "../../../components/forms/Textarea";
-import { Informacoes, updateInformacoes, getInformacoes } from "../../../services/informacoesService";
-import InformacoesCard from "../InformacoesCard/InformacoesCard";
+import InformacoesCard from "./InformacoesCard/InformacoesCard";
 import Button from "../../../components/common/Button/Button";
 
-const CadastrarInformacoes:React.FC = ()=>{
+import { Informacoes, getInformacoes, deleteInformacoes, createOrUpdateInformacoes } from "../../../services/informacoesService";
 
-  const [informacoes, setInformacoes] = useState<Informacoes>({} as Informacoes)
+import styles from './ManipularInformacoes.module.css'
+
+const ManipularInformacoes:React.FC = ()=>{
+
+  const [informacoes, setInformacoes] = useState<Informacoes>();
 
   const initialValues : Informacoes = {
-    id: 1,
     foto: '',
     nome: '',
     cargo: '',
@@ -34,7 +39,13 @@ const CadastrarInformacoes:React.FC = ()=>{
       const informacao = await getInformacoes();
       setInformacoes(informacao)
     } catch (error) {
-      console.error('Erro ao buscar informacoes:', error)      
+      if(error instanceof AxiosError){
+        if(error.response?.status!==404){
+          console.log("Erro ao buscar as informacões: ", error)
+        }
+      }  else{
+        console.log("Ocorreu um erro desconhecido ao buscar as informacões: ", error)
+      }  
     }
   } 
 
@@ -43,12 +54,10 @@ const CadastrarInformacoes:React.FC = ()=>{
   }, [])
 
 
-  const onSubmit = async(values:Informacoes, {resetForm} : {resetForm: ()=> void})=>{
+  const onSubmit = async(values:Informacoes)=>{
     try {
-      await updateInformacoes(values);
+      await createOrUpdateInformacoes(values);
       setInformacoes(values);
-      console.log(values);
-      resetForm();
       alert('Formulario Enviado!')
     } catch (error) {
       console.error('Erro ao enviar o formulario:', error);
@@ -58,28 +67,27 @@ const CadastrarInformacoes:React.FC = ()=>{
 
   const handleDelete = async()=>{   
     try {
-      await updateInformacoes(initialValues)
-      setInformacoes(initialValues);
-      console.log(initialValues);
+      await deleteInformacoes();
+      setInformacoes(undefined);
       alert('Formulario Apagado com sucesso.')
     } catch (error) {
-      console.error('Erro ao deletar:', error);
       alert('Ocorreu um erro ao deletar. Tente novamente.')
     }
   }
   
   return(
-    <div className={styles.formWrapper}>
-      <Formik 
-      initialValues={informacoes} 
+    <div className={styles.container}>
+
+      <Form
+      initialValues={informacoes || initialValues} 
       enableReinitialize={true}
       validationSchema={validationSchema} 
       onSubmit={onSubmit} >
         {({errors, touched}) =>(       
 
-        <Form className={styles.form}>
+        <>
 
-          <h2 className={styles.title}> Cadastrar Informações</h2>
+          <Title> Informacoes</Title>
 
           <Input 
             label="Foto"
@@ -109,26 +117,24 @@ const CadastrarInformacoes:React.FC = ()=>{
             touched={touched.resumo}
           />
 
-          <button type="submit" className={styles.button}>Salvar</button>       
+          <Button type="submit">Salvar</Button>      
 
-        </Form>
+        </>
 
         )}
-      </Formik>
+      </Form>
         
       {informacoes && 
-      Object.entries(informacoes).some(
-        ([key, value]) => key !== 'id' && value.trim() !== ""
-      ) && (
         <div className={styles.cardContainer}>
           <InformacoesCard informacoes={informacoes} />
 
           <Button  onClick={handleDelete} red>Deletar</Button>
-        </div>    
-    )} 
+        </div>  
+        
+      } 
 
     </div>
-  )
-}
+  );
+};
 
-export default CadastrarInformacoes;
+export default ManipularInformacoes;

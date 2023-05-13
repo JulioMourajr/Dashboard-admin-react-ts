@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import Form from "../../../components/forms/Form";
@@ -31,9 +31,8 @@ const ManipularExperiencia:React.FC = ()=>{
     titulo: Yup.string().required("Campo obrigatório"),
     descricao: Yup.string(),
     tipo: Yup.string().required("Campo obrigatório"),
-    anoInicio: Yup.number().typeError('Um numero é obrigatorio'),
-    anoFim:  Yup.number().typeError('Um numero é obrigatorio'),
-
+    anoInicio: Yup.number().required("Campo obrigatório").typeError('Um numero é obrigatorio'),
+    anoFim:  Yup.number().required("Campo obrigatório").typeError('Um numero é obrigatorio'),
   });
 
   const onSubmit = async (values:Experiencia,{resetForm}:{resetForm:()=> void })=>{
@@ -56,7 +55,8 @@ const ManipularExperiencia:React.FC = ()=>{
       >
         {({errors, touched})=> (
 
-          <>{
+          <>
+          {
             !experiencia ? 
             <Title>Cadastrar Experiência</Title>
             :

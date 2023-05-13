@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './InformacoesCard.module.css'
 
-import { Informacoes } from "../../../services/informacoesService";
+import { Informacoes } from "../../../../services/informacoesService";
 
 interface InformacoesCardProps{
     informacoes: Informacoes

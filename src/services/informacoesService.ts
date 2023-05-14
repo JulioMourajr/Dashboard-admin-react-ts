@@ -8,27 +8,29 @@ export interface Informacoes{
     resumo:string;
 }
 
-export const createInformacoes = async(informacoes:Informacoes):Promise<Informacoes> =>{
-    const response = await api.post('/api/informacoes', informacoes);
+export const createInformacoes = async (informacoes:Informacoes)
+:Promise<Informacoes> => {
+    const response = await api.post('/informacoes', informacoes);
     return response.data;
 }
 
-export async function updateInformacoes(informacoes:Informacoes): Promise<Informacoes> {  
-    const response =  await api.put<Informacoes>('/informacoes/1', informacoes)
-    return response.data;
-}
-
-export async function getInformacoes(): Promise<Informacoes>{
+export const getInformacoes = async (): Promise<Informacoes> =>{
     const response = await api.get<Informacoes>('/informacoes/1');
     return response.data;
 }
 
-export async function deleteInformacoes(): Promise<Informacoes>{
-    const response = await api.delete<Informacoes>('/informacoes/1');
+export const deleteInformacoes = async () : Promise<void> =>{
+    await api.delete('/informacoes/1');
+}
+
+export const updateInformacoes = async (informacoes:Informacoes): 
+Promise<Informacoes> => {  
+    const response =  await api.put<Informacoes>('/informacoes/1', informacoes)
     return response.data;
 }
 
-export const createOrUpdateInformacoes = async(informacoes:Informacoes):Promise<Informacoes> =>{
+export const createOrUpdateInformacoes = async(informacoes:Informacoes)
+:Promise<Informacoes> =>{
     if(informacoes.id){
         return await updateInformacoes(informacoes);
     }else{

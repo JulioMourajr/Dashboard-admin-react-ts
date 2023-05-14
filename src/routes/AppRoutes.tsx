@@ -1,16 +1,17 @@
 import React from 'react'
 
 import { Navigate, Route, Routes } from 'react-router-dom'
+
+import Home from '../pages/home/Home'
+import ListagemPortifolios from '../pages/portifolio/ListagemPortifolio/ListagemPortifolios'
+import ListagemExperiencias from '../pages/curriculo/ListagemExperiencia/ListagemExperiencia'
+import ManipularProjeto from '../pages/portifolio/ManipularProjeto/ManipularProjeto'
+import ManipularInformacoes from '../pages/curriculo/ManipularInformacoes/ManipularInformacoes'
+import ManipularExperiencia from '../pages/curriculo/ManipularExperiencia/ManipularExperiencia'
+
 import Layout from '../components/layout'
 
-import Home from '../pages/home'
-import CadastrarPortifolio from '../pages/portifolio/ManipularProjeto'
-import ListagemPortifolios from '../pages/portifolio/ListagemPortifolio'
-import CadastrarInformacoes from '../pages/curriculo/ManipularInformacoes'
-import CadastrarExperiencia from '../pages/curriculo/ManipularExperiencia'
-import ListagemExperiencia from '../pages/curriculo/ListagemExperiencia'
 import { useAuth } from '../contexts/AuthContexts'
-
 
 const AppRoutes:React.FC = () => {
 
@@ -27,10 +28,12 @@ const AppRoutes:React.FC = () => {
       <Layout>
         <Routes>
           <Route path='/' element={<Home/>}/>
-            <Route path='/curriculo/informacoes/cadastro' element={<CadastrarInformacoes/>}/> 
-            <Route path='/curriculo/experiencia/cadastro' element={<CadastrarExperiencia/>}/>    
-            <Route path='/curriculo/experiencia/lista' element={<ListagemExperiencia/>}/> 
-            <Route path='/portifolio/cadastro' element={<CadastrarPortifolio/>}/>  
+            <Route path='/curriculo/informacoes' element={<ManipularInformacoes/>}/> 
+            <Route path='/curriculo/experiencia/cadastro' element={<ManipularExperiencia/>}/>    
+            <Route path='/curriculo/experiencia/atualizar' element={<ManipularExperiencia/>}/> 
+            <Route path='/curriculo/experiencia/lista' element={<ListagemExperiencias/>}/>
+            <Route path='/projeto/cadastrar' element={<ManipularProjeto/>}/>
+            <Route path='/projeto/atualizar' element={<ManipularProjeto/>}/>
             <Route path='/portifolio/listagem' element={<ListagemPortifolios/>}/> 
           </Routes>                   
       </Layout> 

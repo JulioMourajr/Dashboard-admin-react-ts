@@ -30,7 +30,7 @@ export const getExperienciaByTipo = async (tipo: string): Promise<Experiencia[]>
 }
 
 export const updateExperiencia = async (experiencia:Experiencia):Promise<Experiencia> =>{
-  const response = await api.put(`/experiencias/${experiencia.id}`,experiencia)
+  const response = await api.put<Experiencia>(`/experiencias/${experiencia.id}`,experiencia)
   return response.data
 }
 

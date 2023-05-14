@@ -8,22 +8,14 @@
   ],
   "informacoes": [
     {
-      "id": 1,
       "foto": "https://github.com/JulioMourajr.png",
       "nome": "Julio Moura",
-      "cargo": "Dev Front end",
-      "resumo": "Um nutricionista em transição de carreira, possui conhecimentos em HTML, CSS, JS, React, Node,SQL , Java e Spring."
+      "cargo": "Dev Front End",
+      "resumo": "Possui competencias em js, java, angular, react e spring.",
+      "id": 1
     }
   ],
   "experiencias": [
-    {
-      "id": 2,
-      "titulo": "Sistemas de Informação",
-      "descricao": "",
-      "tipo": "academico",
-      "anoInicio": "2023",
-      "anoFim": "2023"
-    },
     {
       "id": 3,
       "titulo": "Tecnico de sistemas Audiovisuais - TV GAZETA",

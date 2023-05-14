@@ -28,13 +28,13 @@ const SideBar:React.FC = ()=>{
           </NavLink>
         </li>
         <li>
-          <NavLink to="/curriculo/experiencia/cadastro">
+          <NavLink to="/curriculo/experiencia/cadastrar">
             Cadastrar Experiencia
           </NavLink>
         </li>
         <li>
-          <NavLink to="/curriculo/experiencia/lista">
-            Lista de Experiencias
+          <NavLink to="/curriculo/experiencia/listar">
+            Listar Experiencias
           </NavLink>
         </li>
       </ul>
@@ -42,20 +42,20 @@ const SideBar:React.FC = ()=>{
       <h3>Portifolio</h3>
       <ul>
           <li>
-            <NavLink to="/portifolio/cadastro">
-              Cadastrar Portifolio
+            <NavLink to="/projeto/cadastrar">
+              Cadastrar Projeto
             </NavLink>
           </li>
           <li>
-            <NavLink to="/portifolio/listagem">
-              Listagem de Portifolios
+            <NavLink to="/portifolio/listar">
+              Listar Portifolios
             </NavLink>
           </li>
       </ul>
 
       <ul>
         <li>
-          <NavLink to="/login">
+          <NavLink onClick={logout} to="/login">
             <h3>Logout</h3>
           </NavLink>
         </li>

@@ -8,8 +8,8 @@ import styles from './Form.module.css'
 
 interface FormProps<T> {
   initialValues: T;
-  enableReinitialize?: boolean;
   validationSchema: Yup.ObjectSchema<Omit<Partial<T>, "id">>
+  enableReinitialize?: boolean;
   onSubmit: (values: T, formikHelpers:FormikHelpers<T>) => void | Promise<void>;
   children: (formikProps: FormikProps<T>) => React.ReactNode;
 }

@@ -8,7 +8,7 @@ import InfoBox from "../../components/common/InfoBox";
 //import {FaGraduationCap, FaBriefcase, FaFolder} from 'react-icons/fa';
 
 import { Projeto, getPortifolio } from "../../services/portifolioService";
-import { Experiencia, getExperienciaById, getExperienciaByTipo } from "../../services/experienciaService";
+import { Experiencia, getExperienciaByTipo } from "../../services/experienciaService";
 
 const Home = ()=>{
 

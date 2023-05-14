@@ -11,7 +11,7 @@
       "foto": "https://github.com/JulioMourajr.png",
       "nome": "Julio Moura",
       "cargo": "Dev Front End",
-      "resumo": "Possui competencias em js, java, angular, react e spring.",
+      "resumo": "Possui competencias em js, java, angular, react e spring e node.",
       "id": 1
     }
   ],
@@ -45,6 +45,18 @@
       "link": "https://github.com/JulioMourajr/cracha-nlw",
       "imagem": "https://picsum.photos/200/300?random=2",
       "titulo": "Crachá Digital"
+    },
+    {
+      "link": "https://pin.it/6FCsSR9",
+      "image": "https://pin.it/6FCsSR9",
+      "title": "teste projeto",
+      "id": 3
+    },
+    {
+      "link": "https://br.pinterest.com/pin/21462535717792730/",
+      "image": "https://pin.it/6FCsSR9",
+      "title": "teste 3",
+      "id": 4
     }
   ]
 }

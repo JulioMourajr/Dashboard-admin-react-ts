@@ -31,7 +31,7 @@ const ManipularProjeto = () => {
     try {
       await createOrUpdateProjeto(values);
       resetForm();
-      navigate("/portifolio/listagem")
+      navigate("/portifolio/listar")
       alert("Formulario enviado com sucesso!");
     } catch (error) {
         alert("Erro ao enviar formulario!")

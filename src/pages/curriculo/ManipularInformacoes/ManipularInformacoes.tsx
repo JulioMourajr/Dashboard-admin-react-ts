@@ -4,9 +4,9 @@ import * as Yup from 'yup';
 import { AxiosError } from "axios";
 
 import Form from "../../../components/forms/Form";
-import Input from "../../../components/forms/Input";
+import Input from "../../../components/forms/Input/Input";
 import Title from "../../../components/common/Title";
-import Textarea from "../../../components/forms/Textarea";
+import Textarea from "../../../components/forms/Textarea/Textarea";
 import InformacoesCard from "./InformacoesCard/InformacoesCard";
 import Button from "../../../components/common/Button/Button";
 
@@ -83,6 +83,7 @@ const ManipularInformacoes:React.FC = ()=>{
       enableReinitialize={true}
       validationSchema={validationSchema} 
       onSubmit={onSubmit} >
+        
         {({errors, touched}) =>(       
 
         <>

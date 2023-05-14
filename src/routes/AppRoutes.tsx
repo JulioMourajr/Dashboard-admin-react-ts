@@ -29,12 +29,12 @@ const AppRoutes:React.FC = () => {
         <Routes>
           <Route path='/' element={<Home/>}/>
             <Route path='/curriculo/informacoes' element={<ManipularInformacoes/>}/> 
-            <Route path='/curriculo/experiencia/cadastro' element={<ManipularExperiencia/>}/>    
+            <Route path='/curriculo/experiencia/cadastrar' element={<ManipularExperiencia/>}/>    
             <Route path='/curriculo/experiencia/atualizar' element={<ManipularExperiencia/>}/> 
-            <Route path='/curriculo/experiencia/lista' element={<ListagemExperiencias/>}/>
+            <Route path='/curriculo/experiencia/listar' element={<ListagemExperiencias/>}/>
             <Route path='/projeto/cadastrar' element={<ManipularProjeto/>}/>
             <Route path='/projeto/atualizar' element={<ManipularProjeto/>}/>
-            <Route path='/portifolio/listagem' element={<ListagemPortifolios/>}/> 
+            <Route path='/portifolio/listar' element={<ListagemPortifolios/>}/> 
           </Routes>                   
       </Layout> 
   )

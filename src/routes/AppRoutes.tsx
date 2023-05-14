@@ -4,7 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from '../components/layout'
 
 import Home from '../pages/home'
-import CadastrarPortifolio from '../pages/portifolio/CadastrarPortifolio'
+import CadastrarPortifolio from '../pages/portifolio/ManipularProjeto'
 import ListagemPortifolios from '../pages/portifolio/ListagemPortifolio'
 import CadastrarInformacoes from '../pages/curriculo/ManipularInformacoes'
 import CadastrarExperiencia from '../pages/curriculo/ManipularExperiencia'

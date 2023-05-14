@@ -1,65 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import styles from "./ListagemPortifolios.module.css"
+import { useNavigate } from "react-router-dom";
 
-interface Portifolio {
-  link:string;
-  image:string;
-  title:string;
-}
+import { Table, Column } from "../../../components/common/Table";
 
-
+import { Projeto, deleteProjeto, getPortifolio } from "../../../services/portifolioService";
 
 const ListagemPortifolios:React.FC = ()=>{
-  const [portifolio, setPortifolio] = useState<Portifolio[]>([
-    {
-      link:'https://academy.comeialabs.com.br/',
-      image:'https://picsum.photos/300/200?random=1',
-      title:'Portifolio 1'
-    },
-    {
-      link:'https://academy.comeialabs.com.br/',
-      image:'https://picsum.photos/300/200?random=2',
-      title:'Portifolio 2'
-    },
-    {
-      link:'https://academy.comeialabs.com.br/',
-      image:'https://picsum.photos/300/200?random=3',
-      title:'Portifolio 3'
-    }
-  ])
+  const navigate = useNavigate();
+  const [portifolio, setPortifolio] = useState<Projeto[]>([]);
 
-  const handleEdit = (index:number) =>{
-    // logica para editar
+  const fetchPortifolio = async () =>{
+    try {
+      const portifolio = await getPortifolio();
+      setPortifolio(portifolio);
+    } catch (error) {
+      console.log(error);
+      alert("Erro ao buscar portifolio!")      
+    }
+  }
+
+  useEffect(()=>{
+    fetchPortifolio();
+  }, []);
+    
+  const handleEdit = (itemPortifolio:Projeto) =>{
+    navigate("/projeto/atualizar", {state:itemPortifolio})
   }
   
-  const handleDelete = (index:number)=>{
-    setPortifolio(portifolio.filter((_, i)=> i!== index))
+  const handleDelete = async (portifolio:Projeto)=>{
+    try{
+      await deleteProjeto(portifolio.id);
+      fetchPortifolio();
+      alert("Portifolio excluido com sucesso!")
+    } catch(error) {
+      console.log(error);
+      alert("Erro ao excluir portifolio!")
+    }
   }
+
+  const columns:Column<Projeto>[] = [
+    {header: "Titulo", acessor:"title"},
+    {header: "Imagem", acessor:"image"},
+    {header: "Link", acessor:"link"},
+  ];
+
   return(
-    <table className={styles.table}>
-      <thead>
-        <tr>
-          <th>Titulo</th>
-          <th>Imagem</th>
-          <th>Link</th>
-          {<th>Ações</th>}
-        </tr>
-      </thead>
-      <tbody>
-        {portifolio.map((itemPortifolio, index) => (
-          <tr key={index}>
-            <td>{itemPortifolio.title}</td>
-            <td><img src={itemPortifolio.image} alt={itemPortifolio.title} className={styles.image}/></td>
-            <td><a href={itemPortifolio.link} target="_blank" rel="noreferrer">{itemPortifolio.link}</a></td>
-            {<td>
-              <button onClick={()=>handleEdit(index)}>Editar</button>
-              <button onClick={()=>handleDelete(index)}>Excluir</button>
-        </td>}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+   <Table
+      columns={columns}
+      data={portifolio}
+      handleEdit={handleEdit}
+      handleDelete={handleDelete}
+   />
   )
 }
 

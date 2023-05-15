@@ -14,7 +14,7 @@ export const createProjeto = async (projeto:Projeto)
 }
 
 export const getPortifolio = async():Promise<Projeto[]> => {
-    const response = await api.get<Projeto[]>("./portifolio");
+    const response = await api.get<Projeto[]>("/portifolio");
     return response.data;
 }
 

@@ -10,8 +10,8 @@
     {
       "foto": "https://github.com/JulioMourajr.png",
       "nome": "Julio Moura",
-      "cargo": "Dev Front End",
-      "resumo": "Possui competencias em js, java, angular, react e spring e node.",
+      "cargo": "DEV back end",
+      "resumo": "Possui afinidades com projetos spring em java 8 ou superior.",
       "id": 1
     }
   ],
@@ -19,18 +19,18 @@
     {
       "id": 3,
       "titulo": "Tecnico de sistemas Audiovisuais - TV GAZETA",
-      "descricao": "",
-      "tipo": "profissional",
+      "descricao": "Técnico de Sistemas AudioVIsuais.",
+      "tipo": "academico",
       "anoInicio": "2012",
-      "anoFim": "2037"
+      "anoFim": 2038
     },
     {
-      "id": 7,
-      "titulo": "Dev comeia Labs Front end",
-      "descricao": "",
+      "titulo": "Dev Back end Comeia",
+      "descricao": "Dev back end",
       "tipo": "profissional",
-      "anoInicio": "2023",
-      "anoFim": "2027"
+      "anoInicio": 2022,
+      "anoFim": 2025,
+      "id": 4
     }
   ],
   "portifolio": [
@@ -57,6 +57,24 @@
       "image": "https://pin.it/6FCsSR9",
       "title": "teste 3",
       "id": 4
+    },
+    {
+      "link": "https://github.com/JulioMourajr",
+      "image": "https://github.com/JulioMourajr",
+      "title": "Projeto 1'",
+      "id": 5
+    },
+    {
+      "link": "https://github.com/JulioMourajr",
+      "image": "https://github.com/JulioMourajr.png",
+      "title": "teste1",
+      "id": 7
+    },
+    {
+      "link": "laoaaoa",
+      "image": "teste",
+      "title": "teste 1",
+      "id": 8
     }
   ]
 }

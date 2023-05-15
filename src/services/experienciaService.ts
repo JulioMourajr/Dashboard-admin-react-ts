@@ -40,7 +40,7 @@ export const deleteExperiencia = async (id: number | undefined): Promise<Experie
 }
 
 export const createOrUpdateExperiencia = async (experiencia:Experiencia): Promise<Experiencia> => {
-  if(experiencia.id){
+  if(!experiencia.id){
     return await createExperiencia(experiencia);
   }else{
     return await updateExperiencia(experiencia);

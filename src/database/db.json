@@ -10,8 +10,8 @@
     {
       "foto": "https://github.com/JulioMourajr.png",
       "nome": "Julio Moura",
-      "cargo": "DEV back end",
-      "resumo": "Possui afinidades com projetos spring em java 8 ou superior.",
+      "cargo": "Dev Front End JR",
+      "resumo": "Manja de React, Angular.",
       "id": 1
     }
   ],
@@ -19,14 +19,14 @@
     {
       "id": 3,
       "titulo": "Tecnico de sistemas Audiovisuais - TV GAZETA",
-      "descricao": "Técnico de Sistemas AudioVIsuais.",
+      "descricao": "Técnico de Sistemas AudioVisuais.",
       "tipo": "academico",
       "anoInicio": "2012",
       "anoFim": 2038
     },
     {
-      "titulo": "Dev Back end Comeia",
-      "descricao": "Dev back end",
+      "titulo": "Dev Back end Comeia.",
+      "descricao": "Dev back end jr no comeia.",
       "tipo": "profissional",
       "anoInicio": 2022,
       "anoFim": 2025,
@@ -75,6 +75,18 @@
       "image": "teste",
       "title": "teste 1",
       "id": 8
+    },
+    {
+      "link": "adssadsa",
+      "image": "teste",
+      "title": "teste 1",
+      "id": 9
+    },
+    {
+      "link": "teste12",
+      "image": "teste12",
+      "title": "teste21",
+      "id": 10
     }
   ]
 }

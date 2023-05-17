@@ -10,8 +10,8 @@
     {
       "foto": "https://github.com/JulioMourajr.png",
       "nome": "Julio Moura",
-      "cargo": "Dev Front End JR",
-      "resumo": "Manja de React, Angular.",
+      "cargo": "Dev front end",
+      "resumo": "React ts, angular",
       "id": 1
     }
   ],
@@ -25,7 +25,7 @@
       "anoFim": 2038
     },
     {
-      "titulo": "Dev Back end Comeia.",
+      "titulo": "Dev Back end jr no Comeia",
       "descricao": "Dev back end jr no comeia.",
       "tipo": "profissional",
       "anoInicio": 2022,
@@ -87,6 +87,18 @@
       "image": "teste12",
       "title": "teste21",
       "id": 10
+    },
+    {
+      "link": "dao",
+      "image": "dado",
+      "title": "CasimiroFlix",
+      "id": 11
+    },
+    {
+      "link": "tetse",
+      "image": "teste",
+      "title": "teste 2",
+      "id": 12
     }
   ]
 }

@@ -18,7 +18,7 @@ export const Table = <T,>({columns, data, handleEdit, handleDelete}:
     TableProps<T>):JSX.Element => {
   return (
     <table className={styles.table}>
-        <thead className={styles.table}>
+        <thead>
             <tr>
                 {columns.map((column,index)=>(
                 <th key={index} className={styles.th}>{column.header}</th>))}
@@ -31,7 +31,7 @@ export const Table = <T,>({columns, data, handleEdit, handleDelete}:
                     {columns.map((column,columnIndex)=>(
                         column.acessor =="image" ? 
                         <td key={columnIndex} className={styles.td}>
-                            <img src={item[column.acessor]as string} alt="Imagem" />
+                            <img src={item[column.acessor]as string} alt="Imagem"/>
                         </td>
                         :
                         <td key={columnIndex} className={styles.td}>

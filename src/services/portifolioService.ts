@@ -18,10 +18,9 @@ export const getPortifolio = async():Promise<Projeto[]> => {
     return response.data;
 }
 
-export const deleteProjeto = async(id:number | undefined)
+export const deleteProjeto = async(id:number | any)
 :Promise<Projeto> =>{
-    const response = await api.delete<Projeto>(`/portifolio/
-    ${id}`);
+    const response = await api.delete<Projeto>(`/portifolio/${id}`);
     return response.data;
 }
 

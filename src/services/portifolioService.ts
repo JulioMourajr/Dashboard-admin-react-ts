@@ -24,7 +24,7 @@ export const deleteProjeto = async(id:number | any)
     return response.data;
 }
 
-export const updateProjeto = async(projeto:Projeto)
+export const updateProjeto = async(id:number, projeto:Projeto)
 :Promise<Projeto> =>{
     const response = await api.put<Projeto>(`/portifolio/
     ${projeto.id}`, projeto);
@@ -36,11 +36,16 @@ export const getProjeto = async(id:number):Promise<Projeto> => {
     return response.data;
 }
 
+export const getProjetoById = async (id: number) => {
+    const response = await api.get(`/portfolio/${id}`);
+    return response.data;
+ };
+
 export const createOrUpdateProjeto = async(projeto:Projeto):
 Promise<Projeto> => {
-    if(!projeto.id) {
-        return await createProjeto(projeto);
+    if(projeto.id) {
+        return await updateProjeto(projeto.id, projeto);
     }else{
-        return await updateProjeto(projeto);
+        return await createProjeto(projeto);
     }
 }

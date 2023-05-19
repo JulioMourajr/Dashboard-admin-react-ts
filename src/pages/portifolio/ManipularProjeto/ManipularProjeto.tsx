@@ -1,6 +1,4 @@
-import React from "react";
-
-import * as Yup from "yup";
+import * as Yup from 'yup';
 import { useLocation, useNavigate } from "react-router-dom";
 
 

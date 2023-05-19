@@ -1,4 +1,4 @@
-import React from 'react'
+import { ReactNode, } from 'react'
 
 import styles from './Table.module.css'
 
@@ -35,7 +35,7 @@ export const Table = <T,>({columns, data, handleEdit, handleDelete}:
                         </td>
                         :
                         <td key={columnIndex} className={styles.td}>
-                            {item[column.acessor]}
+                            {item[column.acessor] as ReactNode}
                         </td>
                     ))}
                     {(handleEdit || handleDelete) &&(

@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from './Textarea.module.css'
 
-import Input, { InputProps }from "../Input";
+import Input, { InputProps }from "../Input/Input";
 
 interface TextareaProps extends InputProps{}
 

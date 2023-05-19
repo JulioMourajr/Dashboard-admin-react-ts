@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "./Home.module.css"
 
 import Title from "../../components/common/Title";
 import InfoBox from "../../components/common/InfoBox";
 
-//import {FaGraduationCap, FaBriefcase, FaFolder} from 'react-icons/fa';
+import {FaGraduationCap, FaBriefcase, FaFolder} from 'react-icons/fa';
 
 import { Projeto, getPortifolio } from "../../services/portifolioService";
 import { Experiencia, getExperienciaByTipo } from "../../services/experienciaService";
@@ -62,17 +62,17 @@ const Home = ()=>{
         <InfoBox
           title="Experiencias Academicas"
           value={experienciasAcademicas.length}
-          //icon={<FaGraduationCap size={65}/>}
+          icon={<FaGraduationCap size={65}/>}
           />
           <InfoBox
           title="Experiencias Profissionais"
           value={experienciasProfissionais.length}
-          //icon={<FaBriefcase/>}
+          icon={<FaBriefcase/>}
           />
           <InfoBox
           title="Projetos no Portifólio"
           value={portifolio.length}
-          //icon={<FaFolder />}
+          icon={<FaFolder />}
           />
       </div>
     </main>

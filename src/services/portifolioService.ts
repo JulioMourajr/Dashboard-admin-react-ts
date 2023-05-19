@@ -1,7 +1,7 @@
 import api from './api'
 
 export interface Projeto{
-    id?: number;
+    id: number;
     link:string;
     image:string;
     title:string;

@@ -3,12 +3,12 @@ import React from "react";
 import * as Yup from "yup";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import Form from "../../../components/forms/Form";
-import Input from "../../../components/forms/Input";
-import Select from "../../../components/forms/Select";
-import Button from "../../../components/common/Button";
-import Textarea from "../../../components/forms/Textarea";
-import Title from "../../../components/common/Title";
+import Form from "../../../components/forms/Form/Form";
+import Input from "../../../components/forms/Input/Input";
+import Select from "../../../components/forms/Select/Select";
+import Button from "../../../components/common/Button/Button";
+import Textarea from "../../../components/forms/Textarea/Textarea";
+import Title from "../../../components/common/Title/Title";
 
 
 import { Experiencia, createOrUpdateExperiencia } from "../../../services/experienciaService";

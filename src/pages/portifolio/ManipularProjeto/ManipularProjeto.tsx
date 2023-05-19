@@ -16,6 +16,7 @@ const ManipularProjeto = () => {
   const portifolio = useLocation().state as Projeto;
 
   const initialValues: Projeto = {
+    id:0,
     link: "",
     image: "",
     title: "",

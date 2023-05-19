@@ -22,7 +22,7 @@ const ListagemPortifolios:React.FC = ()=>{
 
   useEffect(()=>{
     fetchPortifolio();
-  }, []);
+  }, [portifolio]);
     
   const handleEdit = (itemPortifolio:Projeto) =>{
     navigate("/projeto/atualizar", {state:itemPortifolio})

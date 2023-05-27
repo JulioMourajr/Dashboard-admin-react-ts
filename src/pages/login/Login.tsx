@@ -8,7 +8,7 @@ import Input from '../../components/forms/Input/Input';
 import Button from '../../components/common/Button';
 import Title from '../../components/common/Title';
 
-import {  LoginData, login as loginService } from '../../services/authService';
+import {  User, login as loginService } from '../../services/authService';
 
 import { useAuth } from '../../contexts/AuthContexts';
 
@@ -16,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const initialValues:LoginData = {
+  const initialValues:User = {
     email:"",
     password:"",
   };
@@ -30,7 +30,7 @@ const Login = () => {
     .required("Senha é obrigatorio"),
   });
 
-  const onSubmit = async(values:LoginData) => {
+  const onSubmit = async(values:User) => {
     try {
       const user = await loginService(values);
       login(user)
